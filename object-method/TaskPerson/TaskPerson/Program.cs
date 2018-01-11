@@ -8,7 +8,11 @@ namespace TaskPerson
         {
             Person personPekka = new Person();
             personPekka.Name = "Pekka M";
+            Console.WriteLine($"Pekan ikä: { personPekka.GetAge()}");
+
             personPekka.GrowOld();
+            Console.WriteLine($"Pekan ikä: { personPekka.GetAge()}");
+            personPekka.GrowOld(26);
             personPekka.PrintPersonInfo();
 
             Person newPerson = new Person("Joe Doe", 17);
