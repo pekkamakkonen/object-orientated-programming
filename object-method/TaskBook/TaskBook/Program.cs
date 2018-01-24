@@ -6,16 +6,15 @@ namespace TaskBook
     {
         static void Main(string[] args)
         {
-            Book bookMarketingAnIntroduction = new Book();
-            bookMarketingAnIntroduction.Title = "Marketing An Introduction";
-            bookMarketingAnIntroduction.Author = "Kotler Philip";
-            bookMarketingAnIntroduction.Id = 12345;
-            bookMarketingAnIntroduction.Price = 50.99;
+            Book book1 = new Book();
+            book1.Title = "Marketing An Introduction";
+            book1.Author = "Kotler Philip";
+            book1.Id = 12345;
+            book1.Price = 50.99;
 
-            Book bookLakiopas = new Book("Lakiopas - juridiikan perusteet", "Suojanen", 209209, 37);
+            Book book2 = new Book("Lakiopas - juridiikan perusteet", "Suojanen, Savolainen, Korte", 209209, 35.70);
 
-            Console.WriteLine(bookMarketingAnIntroduction.CompareBook(bookLakiopas));
-
+            Console.WriteLine(book1.CompareBook(book2));
             Console.ReadKey();
         }
     }
