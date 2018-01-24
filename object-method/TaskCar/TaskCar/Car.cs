@@ -33,8 +33,25 @@ namespace TaskCar
 
         public void Accelerate()
         {
-            double newSpeed = Speed + (Speed * 0.10);
-            Console.WriteLine($"Uusi nopeus on: { newSpeed }");
+            Speed = Speed + 0;
+        }
+
+        public void Accelerate(int addSpeed)
+        {
+            if (addSpeed > 0)
+            {
+                Speed = Speed + addSpeed;
+                Console.WriteLine($"Auto kiihdyttää. Nopeus kiihdytyksen jälkeen on: { Speed }");
+            }
+            else
+            {
+                Console.WriteLine($"Negatiivinen muutos ei ole sallittu!");
+            }
+        }
+
+        public void Brake()
+        {
+            Console.WriteLine($"Auto jarruttaa. Nopeus jarrutuksen jälkeen on: { Speed * 0.9 }");
         }
     }
 }
