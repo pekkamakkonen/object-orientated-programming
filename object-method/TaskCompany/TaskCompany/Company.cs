@@ -23,22 +23,51 @@ namespace TaskCompany
             Expense = 0.00;
         }
 
+        public Company(string title, string address, string phone, double outcome, double expense)
+        {
+            Title = title;
+            Address = address;
+            Phone = phone;
+            Outcome = outcome;
+            Expense = expense;
+        }
+
+        // Copy constructor.
+        public Company(Company previousCompany)
+        {
+            Title = previousCompany.Title;
+            Address = previousCompany.Address;
+            Phone = previousCompany.Phone;
+            Outcome = previousCompany.Outcome;
+            Expense = previousCompany.Expense;
+        }
+
         //Methods
+
+        public void ShowCompanyInfo()
+        {
+            Console.WriteLine($"Yrityksen nimi: { Title }");
+            Console.WriteLine($"Osoite: { Address }");
+            Console.WriteLine($"Puhelin: { Phone }");
+            Console.WriteLine($"Tulot: { Outcome }");
+            Console.WriteLine($"Menot: { Expense }");
+        }
+
         public void Profit()
         {
-            double profit = (Outcome - Expense) / (Expense * 100);
+            double profit = ((Outcome - Expense) / Expense * 100);
 
-            if (profit >= 200)
+            if (profit >= 300)
             {
-                Console.WriteLine("Firmalla menee tyydyttävästi.");
+                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee hyvin.");
             }
-            else if (profit >= 300)
+            else if (profit >= 200)
             {
-                Console.WriteLine("Firmalla menee hyvin.");
+                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee tyydyttävästi.");
             }
             else
             {
-                Console.WriteLine("Firmalla menee kehnosti.");
+                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee kehnosti.");
             }
         }
     }
