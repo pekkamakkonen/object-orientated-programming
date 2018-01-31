@@ -32,18 +32,19 @@ namespace TaskBook
         //Methods
         public void PrintBookInfo()
         {
-            Console.WriteLine($"Kirjan nimi: {Title} \n Kirjailijan nimi {Author} \n ID {Id} \n Hinta {Price}");
+            Console.WriteLine($"Kirjan nimi: {Title}\nKirjailijan nimi: {Author}\nID: {Id}\nHinta {Price}");
+            Console.WriteLine();
         }
 
         public string CompareBook(Book book)
         {
             if(this.Price > book.Price)
             {
-                return ($"{this.Title} on kalliimpi kuin {book.Title} kirja");
+                return ($"{Title} on kalliimpi kuin {book.Title} -kirja.");
             }
             else
             {
-                return ($"{book.Title} on kalliimpi kuin {this.Title} kirja");
+                return ($"{book.Title} on kalliimpi kuin {Title} -kirja.");
             }
         }
     }
