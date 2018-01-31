@@ -48,7 +48,7 @@ namespace TaskEmployee
 
         public void PrintEmployeeInfo()
         {
-            Console.WriteLine($"Työntekijän nimi: {Name}\nId {Id}\nTehtävä {Position}\nPalkka {Math.Round(Salary)}");
+            Console.WriteLine($"Työntekijän nimi: {Name}\nId: {Id}\nTehtävä: {Position}\nPalkka: {Math.Round(Salary)}");
             Console.WriteLine();
         }
     }
