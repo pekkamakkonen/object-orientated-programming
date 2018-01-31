@@ -59,15 +59,15 @@ namespace TaskCompany
 
             if (profit >= 300)
             {
-                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee hyvin.");
+                Console.WriteLine($"Firman voitto on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee hyvin.");
             }
             else if (profit >= 200)
             {
-                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee tyydyttävästi.");
+                Console.WriteLine($"Firman voitto on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee tyydyttävästi.");
             }
-            else
+            else if (profit < 100)
             {
-                Console.WriteLine($"Firman tulot on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee kehnosti.");
+                Console.WriteLine($"Firman voitto on { Math.Round(profit) } prosenttia suurempi kuin menot eli firmalla menee kehnosti.");
             }
         }
     }
