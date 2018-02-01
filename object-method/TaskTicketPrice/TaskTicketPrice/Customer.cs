@@ -23,16 +23,54 @@ namespace TaskTicketPrice
             MtkMember = false;
         }
 
-        public Customer(string name, int age, bool soldier, bool student, bool mtkMember)
+        //Methods
+        public void AskData()
         {
-            Name = name;
-            Age = age;
-            Soldier = soldier;
-            Student = student;
-            MtkMember = mtkMember;
+            Console.WriteLine("Syötä nimesi: ");
+            Name = Console.ReadLine();
+
+            bool isNumber;
+            do
+            {
+                Console.WriteLine("Syötä ikäsi: ");
+                string age = Console.ReadLine();
+                isNumber = int.TryParse(age, out Age);
+            }while (isNumber != true);
+
+            string soldier;
+            do
+            {
+                Console.WriteLine("Oletko varusmies? Y/N");
+                soldier = Console.ReadLine();
+                if (soldier == "Y" || soldier == "y")
+                {
+                    Soldier = true;
+                }
+            } while (soldier != "Y" && soldier != "y" && soldier != "N" && soldier != "n");
+
+            string student;
+            do
+            {
+                Console.WriteLine("Oletko opiskelija? Y/N");
+                student = Console.ReadLine();
+                if (student == "Y" || student == "y")
+                {
+                    Student = true;
+                }
+            } while (student != "Y" && student != "y" && student != "N" && student != "n");
+
+            string mtkMember;
+            do
+            {
+                Console.WriteLine("Oletko MTK:n jäsen? Y/N");
+                mtkMember = Console.ReadLine();
+                if (mtkMember == "Y" || mtkMember == "y")
+                {
+                    MtkMember = true;
+                }
+            } while (mtkMember != "Y" && mtkMember != "y" && mtkMember != "N" && mtkMember != "n");
         }
 
-        //Methods
         public void TicketPrice()
         {
             double price = 16.00;
@@ -49,30 +87,27 @@ namespace TaskTicketPrice
             {
                 price = price - (price * 0.5);
             }
+            else if (Soldier == true)
+            {
+                price = price - (price * 0.5);
+            }
             else
             {
-                if (Soldier == true)
+                if (Student == true)
                 {
-                    price = price - (price * 0.5);
+                    price = price - (price * 0.45);
                 }
-                else
+                if (MtkMember == true)
                 {
-                    if (Student == true)
-                    {
-                        price = price - (price * 0.45);
-                    }
-                    if (MtkMember == true)
-                    {
-                        price = price - (price * 0.15);
-                    }
+                    price = price - (price * 0.15);
                 }
             }
-                Console.WriteLine($"Lopullinen hinta on: {price}");            
+            Console.WriteLine($"Lopullinen hinta on: {price} e");            
         }
 
         public void PrintCustomerInfo()
         {
-            Console.WriteLine($"Asiakkaan nimi: {Name}\nÍkä: {Age}\nVarusmies: {Soldier}\nOpiskelija: {Student}\nMTK-jäsen: {MtkMember}");
+            Console.WriteLine($"Asiakkaan nimi: {Name}\nIkä: {Age}\nVarusmies: {Soldier}\nOpiskelija: {Student}\nMTK-jäsen: {MtkMember}");
         }
     }
 }
