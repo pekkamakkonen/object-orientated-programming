@@ -28,7 +28,7 @@ namespace TaskCar
 
         public void ShowCarInfo()
         {
-            Console.WriteLine($"Auton merkki: {Brand}\nNopeus: {Speed}\n");
+            Console.WriteLine($"Auton merkki: {Brand}\nNopeus: {Speed} km/h");
         }
 
         public void Accelerate()
@@ -41,7 +41,7 @@ namespace TaskCar
             if (addSpeed > 0)
             {
                 Speed = Speed + addSpeed;
-                Console.WriteLine($"Auto kiihdyttää. Nopeus kiihdytyksen jälkeen on: { Speed }");
+                Console.WriteLine($"Auto kiihdyttää. Nopeus kiihdytyksen jälkeen on: { Speed } km/h");
             }
             else
             {
@@ -51,7 +51,7 @@ namespace TaskCar
 
         public void Brake()
         {
-            Console.WriteLine($"Auto jarruttaa. Nopeus jarrutuksen jälkeen on: { Speed * 0.9 }");
+            Console.WriteLine($"Auto jarruttaa. Nopeus jarrutuksen jälkeen on: { Speed * 0.9 } km/h");
         }
     }
 }
