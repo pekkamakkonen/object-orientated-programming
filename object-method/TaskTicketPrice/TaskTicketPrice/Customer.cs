@@ -79,11 +79,11 @@ namespace TaskTicketPrice
             {
                 price = price - (price * 1);
             }
-            else if (Age >= 65)
+            else if (Age <= 15)
             {
                 price = price - (price * 0.5);
             }
-            else if (Age >= 7 && Age <= 15)
+            else if (Age >= 65)
             {
                 price = price - (price * 0.5);
             }
