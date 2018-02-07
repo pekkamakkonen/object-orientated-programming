@@ -22,12 +22,12 @@ namespace TaskBookAndAuthor
             _price = 0.00;
         }
 
-        public Book(string title, string author, string publisher)
+        public Book(string title, string author, string publisher, double price)
         {
             Title = title;
             Author = author;
             Publisher = publisher;
-            Price = _price;
+            _price = price;
         }
 
         public double Price
