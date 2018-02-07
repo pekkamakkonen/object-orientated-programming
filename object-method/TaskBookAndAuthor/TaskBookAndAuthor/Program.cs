@@ -10,7 +10,7 @@ namespace TaskBookAndAuthor
             book1.Title = "Merkonomin matematiikka";
             book1.Author = "Saaranen, Kolttola, Pösö";
             book1.Publisher = "Edita Publishing Oy";
-            book1.Price = 37.94;
+            book1.Price = 30.555;
 
             book1.GetBook("Merkonomin matematiikka");
             Book.ChangeTheme("Oppikirjat");
