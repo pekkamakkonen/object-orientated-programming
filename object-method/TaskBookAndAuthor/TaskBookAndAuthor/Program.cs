@@ -8,7 +8,7 @@ namespace TaskBookAndAuthor
         {
             Book book1 = new Book("Merkonomin matematiikka", "Saaranen", "Edita Publishing Oy", 40.10);
             book1.GetBook("Merkonomin matematiikka");
-            Console.WriteLine($"Uusi hinta: {book1.Price = 29.00}");
+            book1.Price = 29.00;
 
             Book.ChangeTheme("Oppikirjat");
 
