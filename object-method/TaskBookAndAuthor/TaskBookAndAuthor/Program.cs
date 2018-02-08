@@ -6,17 +6,13 @@ namespace TaskBookAndAuthor
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book();
-            book1.Title = "Merkonomin matematiikka";
-            book1.Author = "Saaranen, Kolttola, Pösö";
-            book1.Publisher = "Edita Publishing Oy";
-            book1.Price = 30.01;
-
+            Book book1 = new Book("Merkonomin matematiikka", "Saaranen", "Edita Publishing Oy", 40.10);
             book1.GetBook("Merkonomin matematiikka");
+            Console.WriteLine($"Uusi hinta: {book1.Price = 29.00}");
+
             Book.ChangeTheme("Oppikirjat");
 
             Console.WriteLine();
-
             book1.GetBook("Merkonomin matematiikka");
 
             Console.ReadKey();

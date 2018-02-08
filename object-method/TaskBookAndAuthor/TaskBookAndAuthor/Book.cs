@@ -8,10 +8,10 @@ namespace TaskBookAndAuthor
     {
         //Fields
         public string Title;
-        public string Author;
+        public readonly string Author;
         public string Publisher;
         private double _price;
-        static string themeName;
+        static string ThemeName;
 
         //Constuctor
         public Book()
@@ -38,7 +38,7 @@ namespace TaskBookAndAuthor
             }
             set
             {
-                if(value > 30)
+                if (value > 30)
                 {
                     _price = value - (value * 0.1);
                 }
@@ -52,19 +52,28 @@ namespace TaskBookAndAuthor
         //methods
         public void GetBook(string title)
         {
-            if(Title == title)
+            if (Title == title)
             {
-                Console.WriteLine($"Kirjan nimi: {Title}\nKirjailija: {Author}\nKustantaja: {Publisher}\nHinta: {Math.Round(Price, 2)}\nTeeman nimi: {themeName}");
+                Console.WriteLine($"Kirjan nimi: {Title}\nKirjailija: {Author}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
             }
             else
             {
                 Console.WriteLine("Kirjaa ei löytynyt.");
             }
         }
-        
+
         public static void ChangeTheme(string theme)
         {
-            themeName = theme;
+            ThemeName = theme;
+        }
+
+        public string AuthorValue
+        {
+            get
+            {
+                return Author;
+            }
+            
         }
     }
 }
