@@ -2,78 +2,85 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TaskBookAndAuthor
+namespace Literature
 {
-    class Book
+    namespace TaskBookAndAuthor
     {
-        //Fields
-        public string Title;
-        public readonly string Author;
-        public string Publisher;
-        private double _price;
-        static string ThemeName;
-
-        //Constuctor
-        public Book()
+        class Book
         {
-            Title = null;
-            Author = null;
-            Publisher = null;
-            _price = 0.00;
-        }
+            //Fields
+            public string Title;
+            public readonly string Author;
+            public string Publisher;
+            private double _price;
+            static string ThemeName;
 
-        public Book(string title, string author, string publisher, double price)
-        {
-            Title = title;
-            Author = author;
-            Publisher = publisher;
-            _price = price;
-        }
-
-        public double Price
-        {
-            get
+            //Constuctor
+            public Book()
             {
-                return _price;
+                Title = null;
+                Author = null;
+                Publisher = null;
+                _price = 0.00;
             }
-            set
+
+            public Book(string title, string author, string publisher, double price)
             {
-                if (value > 30)
+                Title = title;
+                Author = author;
+                Publisher = publisher;
+                _price = price;
+            }
+
+            public double Price
+            {
+                get
                 {
-                    _price = value - (value * 0.1);
+                    return _price;
+                }
+                set
+                {
+                    if (value > 30)
+                    {
+                        _price = value - (value * 0.1);
+                    }
+                    else
+                    {
+                        _price = value;
+                    }
+                }
+            }
+
+            //methods
+            public void GetBook(string title)
+            {
+                if (Title == title)
+                {
+                    Console.WriteLine($"Kirjan nimi: {Title}\nKirjailija: {Author}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
                 }
                 else
                 {
-                    _price = value;
+                    Console.WriteLine($"Kirjaa {title} ei löytynyt.");
                 }
             }
-        }
 
-        //methods
-        public void GetBook(string title)
-        {
-            if (Title == title)
+            public static void ChangeTheme(string theme)
             {
-                Console.WriteLine($"Kirjan nimi: {Title}\nKirjailija: {Author}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
+                ThemeName = theme;
             }
-            else
-            {
-                Console.WriteLine("Kirjaa ei löytynyt.");
-            }
-        }
 
-        public static void ChangeTheme(string theme)
-        {
-            ThemeName = theme;
-        }
-
-        public string AuthorValue
-        {
-            get
+            public string AuthorValue
             {
-                return Author;
+                get
+                {
+                    return Author;
+                }
             }
-            
+
+            public void PrintBookInfo()
+            {
+                    Console.WriteLine($"Kirjan nimi: {Title}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
+            }
         }
     }
 }
