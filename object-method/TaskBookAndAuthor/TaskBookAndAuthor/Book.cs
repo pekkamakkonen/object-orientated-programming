@@ -79,7 +79,7 @@ namespace Literature
 
             public void PrintBookInfo()
             {
-                    Console.WriteLine($"Kirjan nimi: {Title}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
+                Console.WriteLine($"Kirjan nimi: {Title}\nKustantaja: {Publisher}\nHinta: {_price}\nTeeman nimi: {ThemeName}");
             }
         }
     }
