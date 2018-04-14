@@ -19,6 +19,18 @@ namespace Interface
                 Console.WriteLine();
             }
 
+            Customer[] customers = new Customer[3];
+            customers[0] = new Customer("Pekka Makkonen");
+            customers[1] = new Customer("Antti Karjalainen");
+            customers[2] = new Customer("Tuomas Käyhty");
+
+            foreach (var customer in customers)
+            {
+                Console.WriteLine(customer);
+                Console.WriteLine($"Bonusta kertynyt {customer.CalculateBonus()}");
+                Console.WriteLine("---");
+            }
+
             Console.ReadKey();
         }
     }
