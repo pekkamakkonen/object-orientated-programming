@@ -7,29 +7,22 @@ namespace Interface
     {
         static void Main(string[] args)
         {
-            Product[] products = new Product[3];
-            products[0] = new Product("Kahvi", 1.20, 1);
-            products[1] = new Product("Olut", 1.00, 2);
-            products[2] = new Product("MiTu Long Drink", 5.30, 4);
+            //Luodaan kauppa
+            Shop shop1 = new Shop("Ravintola Skinnarila");
 
-            foreach (var product in products)
-            {
-                Console.WriteLine(product);
-                Console.WriteLine(product.CalculateTotalValue());
-                Console.WriteLine();
-            }
+            //Lisätään tuotteita
+            shop1.AddProduct(new Product("Kahvi", 1.20, 1));
+            shop1.AddProduct(new Product("Ruoka 1", 2.20, 2));
+            shop1.AddProduct(new Product("Ruoka 2", 2.60, 3));
 
-            Customer[] customers = new Customer[3];
-            customers[0] = new Customer("Pekka Makkonen");
-            customers[1] = new Customer("Antti Karjalainen");
-            customers[2] = new Customer("Tuomas Käyhty");
+            //Lisätään asiakkaita
+            shop1.AddCustomer(new Customer("Pekka Makkonen"));
+            shop1.AddCustomer(new Customer("Antti Karjalainen"));
+            shop1.AddCustomer(new Customer("Tuomas Käyhty"));
 
-            foreach (var customer in customers)
-            {
-                Console.WriteLine(customer);
-                Console.WriteLine($"Bonusta kertynyt {customer.CalculateBonus()}");
-                Console.WriteLine("---");
-            }
+            //Tulostetaan tuotteet ja asiakkaat
+            shop1.PrintCustomers();
+            shop1.PrintProducts();
 
             Console.ReadKey();
         }
