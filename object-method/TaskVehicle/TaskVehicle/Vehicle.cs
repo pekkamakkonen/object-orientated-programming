@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskVehicle
 {
-    class Vehicle
+    abstract class Vehicle
     {
         //fieds
         protected string Type;
@@ -30,40 +30,7 @@ namespace TaskVehicle
         }
 
         //methods
-        public virtual void PrintInfo()
-        {
-            Console.WriteLine($"Ajoneuvon tyyppi: {Type}\nMerkki: {Brand}\nVuosimalli: {YearModel}\nHinta: {Price}");
-        }
+        abstract public void PrintInfo();
         
-    }
-    //inheritances class Car from class Vehicle
-
-    class Car : Vehicle
-    {
-        //fields
-        protected string EngineSize;
-        protected string Model;
-        protected int Doors;
-
-        //constructor
-        public Car()
-        {
-            EngineSize = null;
-            Model = null;
-            Doors = 0;
-        }
-
-        public Car(string engineSize, string model, int doors)
-        {
-            EngineSize = engineSize;
-            Model = model;
-            Doors = doors;
-        }
-
-        //overrides PrintInfo
-        public override void PrintInfo()
-        {
-            Console.WriteLine($"Moottorin koko: {EngineSize}\nMalli: {Model}\nOvien lukumäärä: {Doors}");
-        }
     }
 }

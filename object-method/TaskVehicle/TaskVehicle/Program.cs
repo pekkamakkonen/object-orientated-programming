@@ -6,13 +6,10 @@ namespace TaskVehicle
     {
         static void Main(string[] args)
         {
-            Vehicle vehicle1 = new Vehicle("Auto", "Ferrari", 2018, 5000000.00);
+            Vehicle vehicle1 = new Car("Auto", "Ferrari", 2018, 5000000.00, "V10", "5-sarja E60", 4);
             vehicle1.PrintInfo();
 
             Console.WriteLine();
-
-            Car car1 = new Car("V10", "5-sarja E60", 4);
-            car1.PrintInfo();
             Console.ReadKey();
         }
     }
