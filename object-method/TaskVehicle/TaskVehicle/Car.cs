@@ -26,10 +26,16 @@ namespace TaskVehicle
             Doors = doors;
         }
 
+        //overrides ToString-method
+        public override string ToString()
+        {
+            return ($"Tyyppi: {Type}\nMerkki: {Brand}\nVuosimalli: {YearModel}\nHinta: {Price}\nMoottorin koko: {EngineSize}\nMalli: {Model}\nOvien lukumäärä: {Doors}");
+        }
+
         //overrides PrintInfo
         public override void PrintInfo()
         {
-            Console.WriteLine($"Tyyppi: {Type}\nMerkki: {Brand}\nVuosimalli: {YearModel}\nHinta: {Price}\nMoottorin koko: {EngineSize}\nMalli: {Model}\nOvien lukumäärä: {Doors}");
+            Console.WriteLine(ToString());
         }
     }
 }
