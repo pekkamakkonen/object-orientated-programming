@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Interface
 {
-    class Customer
+    class Customer : ICustomer
     {
         //Fields
         public string Name;

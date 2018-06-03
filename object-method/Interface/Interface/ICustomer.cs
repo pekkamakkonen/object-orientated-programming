@@ -6,7 +6,7 @@ namespace Interface
 {
     interface ICustomer
     {
-        void GetCustomer();
-        void CalculateBonus();
+        string GetCustomer(string name);
+        double CalculateBonus();
     }
 }
